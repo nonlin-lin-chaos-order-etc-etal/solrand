@@ -11,3 +11,5 @@ Anchor.toml
 *keypair.json*
 localhost-ledger*
 test-ledger*
+
+**/*~

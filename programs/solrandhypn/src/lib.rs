@@ -41,7 +41,7 @@ pub mod solrandhypn {
             let requester_key = ctx.accounts.requester.to_account_info().key();
 
             if requester_key != ctx.accounts.vault.requester {
-                return Err(ErrorCode::Unauthorized.into());
+                return Err(ErrorCode::RequesterAndVaultMismatch.into());
             }
 
             let requester = &mut ctx.accounts.requester.load()?;
@@ -124,7 +124,7 @@ pub mod solrandhypn {
         let requester = &mut ctx.accounts.requester.load_mut()?;
 
         if requester.authority != ctx.accounts.authority.key() {
-            return Err(ErrorCode::Unauthorized.into());
+            return Err(ErrorCode::RequesterAndContextAccountsMismatch.into());
         }
 
         if requester.active_request {
@@ -226,4 +226,8 @@ pub enum ErrorCode {
     WrongOracle,
     #[msg("You cannot change authority of a request awaiting a response")]
     RequesterLocked,
+    #[msg("Not authorized: requester and vault keys mismatch")]
+    RequesterAndVaultMismatch,
+    #[msg("Not authorized: requester authority and context accounts authority keys mismatch")]
+    RequesterAndContextAccountsMismatch,
 }
