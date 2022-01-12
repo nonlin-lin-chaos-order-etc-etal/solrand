@@ -1,10 +1,10 @@
 use anchor_lang::prelude::*;
 use std::mem::size_of;
 
-declare_id!("GxJJd3q28eUd7kpPCbNXGeixqHmBYJ2owqUYqse3ZrGS");
+declare_id!("CrkGQLM8mnWxUV2bGXacvFtnk3oVyeP6grRyFgu6XJ9G");
 
 #[program]
-pub mod solrand {
+pub mod solrandhypn {
     use super::*;
 
     const ORACLE_FEE: u64 = 495000; //  Approximately $0.09 = 0.000000001 * $175 * 495,000
