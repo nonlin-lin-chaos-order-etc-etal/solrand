@@ -13,3 +13,6 @@ localhost-ledger*
 test-ledger*
 
 **/*~
+
+nohup.out
+validator.log
