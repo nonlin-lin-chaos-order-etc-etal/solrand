@@ -255,6 +255,16 @@
       "code": 304,
       "name": "RequesterLocked",
       "msg": "You cannot change authority of a request awaiting a response"
+    },
+    {
+      "code": 305,
+      "name": "RequesterAndVaultMismatch",
+      "msg": "Not authorized: requester and vault keys mismatch"
+    },
+    {
+      "code": 306,
+      "name": "RequesterAndContextAccountsMismatch",
+      "msg": "Not authorized: requester authority and context accounts authority keys mismatch"
     }
   ],
   "metadata": {
